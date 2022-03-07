@@ -16,12 +16,12 @@ const authSlice = createSlice({
     initialState,
     reducers:{
         login:(state,action)=>{
-            db.map((ele)=>  { 
-                if(ele.username === action.payload.username && ele.password === action.payload.password){
+            db.forEach((ele)=> { if(ele.username === action.payload.username && ele.password === action.payload.password){
                     state.value.isAuth = true
                     state.value.user = ele
                     localStorage.setItem('userAuth',true)
                     localStorage.setItem('userDetails',JSON.stringify({name:ele.name}))
+                    
                 }
             })
         },
