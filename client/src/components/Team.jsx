@@ -47,7 +47,7 @@ const Team = () => {
         setFilterData(ss)
         
         
-    },[fcompany])
+    },[fcompany,employeeData])
 
     useEffect(()=>{
         if(filterData.length === 0){
@@ -56,7 +56,7 @@ const Team = () => {
 
             setData(filterData)
         }
-    },[filterData])
+    },[filterData,employeeData])
 
     
 
